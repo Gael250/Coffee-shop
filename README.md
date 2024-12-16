@@ -7,8 +7,9 @@ COFFEE-SHOP/
 │   │   └── styles.css          # Main stylesheet for the project (BUT IN MY CASE AM USING TAILWIND)
 │   ├── js/
 │   │   └── scripts.js          # Main JavaScript file for interactivity (WON'T BE NEEDED)
-│   ├── images/
-│   │   └── logo.png            # Logo and other images
+│   ├── php/
+│   │   └── register.php        # Admin registering functionality
+│   │   └── sigin.php           # Admin login functionality
 │
 ├── includes/
 │   ├── header.php              # Reusable header (e.g., navigation, meta tags)
@@ -26,5 +27,4 @@ COFFEE-SHOP/
 │
 ├── index.php                   # Main entry point (login page or dashboard redirect)
 ├── login.php                   # Admin login page
-├── logout.php                  # Logout functionality
 └── README.md                   # Project documentation

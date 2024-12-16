@@ -75,11 +75,13 @@
             </section>
 
             <section id="orders" class="section">
-
+                <h2>Orders</h2>
+                <p>Order will be shown here</p>
             </section>
 
             <section id="users" class="section">
-
+                <h2>Users</h2>
+                <p>Users will be shown here</p>
             </section>
 
             <section id="activity-log" class="section">
