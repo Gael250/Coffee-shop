@@ -19,7 +19,7 @@
                     <li><a href="#analytics">Analytics</a></li>
                     <li><a href="#products">Products</a></li>
                     <li><a href="#orders">Orders</a></li>
-                    <li><a href="#customers">Customers</a></li>
+                    <li><a href="#customers">Users</a></li>
                     <li><a href="#activity-log">Activity Log</a></li>
                     <li><a href="#settings">Settings</a></li>
                 </ul>
@@ -72,6 +72,14 @@
                         </tr>
                     </tbody>
                 </table>
+            </section>
+
+            <section id="orders" class="section">
+
+            </section>
+
+            <section id="users" class="section">
+
             </section>
 
             <section id="activity-log" class="section">
