@@ -10,7 +10,7 @@
     if (!$result){
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     } else {
-        echo "New record created successfully";
+        confirm("New record created successfully");
         setcookie("username", $fname, time() + (86400 * 30), "/");
         header("Location: ../../index.php");
     }

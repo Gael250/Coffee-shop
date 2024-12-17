@@ -1,3 +1,11 @@
+<?php
+require_once 'config.php';
+
+// Query to get all products from the database
+$sql = "SELECT * FROM products";
+$result = mysqli_query($connect, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,28 +56,37 @@
 
             <section id="products" class="section">
                 <h2>Products</h2>
-                <button class="btn">Add New Product</button>
+                <form action="addProduct.php" method="get">                    
+                    <button class="btn">Add New Product </button>
+                </form>
                 <table>
                     <thead>
                         <tr>
                             <th>Product Name</th>
                             <th>Price</th>
+                            <th>Available Stock</th>
+                            <th>Image</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Espresso</td>
-                            <td>$3.00</td>
-                            <td><button class="btn">Edit</button> <button class="btn">Delete</button></td>
-                        </tr>
-                        <tr>
-                            <td>Latte</td>
-                            <td>$4.00</td>
-                            <td>
-                                <button class="btn">Edit</button> <button class="btn">Delete</button>
-                            </td>
-                        </tr>
+                        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($row['name']); ?></td>
+                                <td><?php echo htmlspecialchars($row['price']); ?></td>
+                                <td><?php echo htmlspecialchars($row['stock']); ?></td>
+                                <td>
+                                    <img src="assets/images/<?php echo htmlspecialchars($row['image']); ?>" 
+                                         alt="Product Image" style="width: 50px; height: 50px;">
+                                </td>
+                                <td>
+                                    <button class="btn"><a href="assets/php/edit_product.php?id=<?php echo $row['id']; ?>">Edit</a></button> 
+                                    <button class="btn"><a href="assets/php/delete_product.php?id=<?php echo $row['id']; ?>" 
+                                    onclick="return confirm('Are you sure you want to delete this product?');">Delete</a></button>
+                                    
+                                </td>
+                            </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
             </section>

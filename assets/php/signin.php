@@ -12,6 +12,7 @@
         if (!checkUser($_POST['username'], $_POST['passkey'])){
             header("Location: ../../SignIn.php");
         } else {
+           confirm("Login Successful");
             setcookie("username", $_POST['username'], time() + (86400 * 30), "/");
             header("Location: ../../index.php");
         }
